@@ -1,13 +1,16 @@
 import axios from "axios";
-import { api_videos } from "./config";
+import { api_videos_dev, api_videos_prod } from "./data-config";
 
 const containerVideos = document.querySelector(".videos__container");
 
 async function buscarEMostrarVideos() {
+  const env = import.meta.env;
+  const apiVideos = env.PROD ? api_videos_prod : api_videos_dev;
+
   try {
-    const busca  = await axios.get(api_videos);
+    const busca  = await axios.get(apiVideos);
     const data = await busca.data;
-    const videos = await data.videos;
+    const videos = env.PROD ? data.videos : data;
 
     videos.forEach((video) => {
       if (video.categoria == "") {
