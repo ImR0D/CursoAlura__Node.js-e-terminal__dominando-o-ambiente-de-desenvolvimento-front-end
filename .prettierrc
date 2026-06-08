@@ -1,0 +1,15 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSameLine": false,
+  "endOfLine": "crlf",
+  "jsxSingleQuote": true,
+  "singleQuote": true,
+  "quoteProps": "preserve",
+  "bracketSpacing": false,
+  "parser": "json",
+  "semi": true,
+  "singleAttributePerLine": true,
+  "htmlWhitespaceSensitivity": "css"
+}
+
