@@ -6,7 +6,8 @@ const containerVideos = document.querySelector(".videos__container");
 async function buscarEMostrarVideos() {
   try {
     const busca  = await axios.get(api_videos);
-    const videos = await busca.data;
+    const data = await busca.data;
+    const videos = await data.videos;
 
     videos.forEach((video) => {
       if (video.categoria == "") {
