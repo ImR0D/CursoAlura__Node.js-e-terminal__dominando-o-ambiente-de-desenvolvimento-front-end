@@ -1,11 +1,10 @@
 import axios from "axios";
-import { api_videos_dev, api_videos_prod } from "./data-config";
 
 const containerVideos = document.querySelector(".videos__container");
 
 async function buscarEMostrarVideos() {
   const env = import.meta.env;
-  const apiVideos = env.PROD ? api_videos_prod : api_videos_dev;
+  const apiVideos = env.PROD ? env.VITE_API_VIDEOS : env.VITE_API_VIDEOS;
 
   try {
     const busca  = await axios.get(apiVideos);

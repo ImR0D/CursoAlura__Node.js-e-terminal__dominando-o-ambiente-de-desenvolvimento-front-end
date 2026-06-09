@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-preview": "vite build --watch",
     "preview": "vite preview",
-    "mock-api-videos": "json-server --watch backend/videos.json",
+    "mock-api-videos": "json-server backend/videos.json",
+    "dev-full": "start vite && start json-server --watch backend/videos.json",
     "lint": "eslint ."
   },
   "devDependencies": {
